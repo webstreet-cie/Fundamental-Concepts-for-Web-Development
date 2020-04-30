@@ -1,0 +1,91 @@
+<html>
+<body>
+
+
+
+
+
+<h4>Finding HTML Element by Id</h4>
+<p id="test"></p>
+
+
+<h4>Finding HTML Element by Tag Name</h4>
+<section>
+Hello, how are you?
+</section>
+
+<section id="demoSection">
+</section>
+
+<h4>Finding HTML Element by Class Name</h4>
+<section class="sectionClass">
+  This is the first sectionClass.
+</section>
+
+<section class="sectionClass">
+  This is the second sectionClass.
+</section>
+
+<p id="demoClass">
+</p>
+
+<h4>Finding HTML Element by CSS selectors</h4>
+
+<p class="cssSelector">
+  1st css selector
+</p>
+<p class="cssSelector">
+  2nd css selector
+</p>
+<p class="cssSelector">
+  3rd css selector
+</p>
+
+<p id="demoCssSelector">
+
+</p>
+
+<h4>Finding HTML Element by HTML Object Collections</h4>
+
+<form id="myForm" action="/action_page.php">
+  First name: <input type="text" name="fname" value="Steve"><br>
+  Last name: <input type="text" name="lname" value="Jobs"><br><br>
+  <input type="submit" value="Launch">
+</form>
+
+<p>Click "Try it" to display the value of each element in the form.</p>
+
+<button onclick="displayObjectValues()">Try it</button>
+
+<p id="objectCollectionDemo"></p>
+
+<script>
+document.getElementById("test").innerHTML = "Writing in the paragraph with id=test";
+document.getElementsByTagName("section").innerHTML = "Writing in the section tag";
+
+var x = document.getElementsByTagName("section");
+document.getElementById("demoSection").innerHTML =
+'The text in first section (index 0) is: ' + x[0].innerHTML;
+
+var y = document.getElementsByClassName("sectionClass");
+document.getElementById("demoClass").innerHTML =
+'The first SECTION (index 0) with class="sectionClass": ' + y[0].innerHTML;
+
+var z = document.querySelectorAll("p.cssSelector");
+document.getElementById("demoCssSelector").innerHTML =
+'The first paragraph (index 0) with class="cssSelector": ' + z[0].innerHTML;
+
+function displayObjectValues() {
+  var x = document.forms["myForm"];
+  var text = "";
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    text += x.elements[i].value + "<br>";
+  }
+  document.getElementById("objectCollectionDemo").innerHTML = text;
+}
+
+</script>
+
+</body>
+</html>

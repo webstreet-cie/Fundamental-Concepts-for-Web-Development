@@ -1,0 +1,65 @@
+html,body{
+  height: 100%;
+}
+header {
+  width: 100%;
+  height: 30%;
+  background-image:url("../images/web_agency.png");
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #F1F1F1;
+
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+  background-color: #5F5F5F;
+  color:white;
+}
+
+section {
+height:100%;
+padding:20px;
+}
+
+article {
+width:70%;
+float:left;
+}
+
+aside {
+width:30%;
+float:left;
+
+}
+
+footer {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 10px;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+article, aside {
+    width: 100%;
+  }
+}

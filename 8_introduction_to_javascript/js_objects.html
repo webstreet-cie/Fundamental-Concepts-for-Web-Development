@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Objects in JavaScript</h1>
+
+
+<script>
+//array object
+var firstCar = {
+type:"Audi",
+model:"A3",
+color:"grey",
+weight:1520,
+start: function() {
+	 return this.type + " " + this.model + " starts!";
+}
+}
+
+document.write(firstCar.type);
+document.write("<br/>");
+document.write(firstCar.start());
+document.write("<br/><br/>");
+
+document.write("Looping through the properties of Object firstCar:<br /> ");
+for (property in firstCar) {
+   document.write(property);
+   document.write("<br />");
+}
+
+var secondCar = new Object();
+// Attach properties and methods to car object
+secondCar.type = "Audi";
+secondCar.model = "A3";
+secondCar.color = "grey";
+secondCar.weight = 1520;
+secondCar.getStart = function () {
+        return this.type + " " + this.model + " starts!";
+    };
+
+// access properties & methods
+document.write("<br/>");
+document.write(secondCar.type);
+document.write("<br/>");
+document.write(secondCar.getStart());
+document.write("<br/><br/>");
+
+
+function changeCarType(car)
+{
+    car.type = "Ford";
+}
+
+var myCar = { type : "Audi" };
+changeCarType(myCar);
+document.write(myCar.type); // returns Ford
+
+document.write("<br/><br/>");
+
+var newCar = { type : "Ferrari" };
+var myNewCar = newCar;
+myNewCar.type = "Bentley";
+document.write(newCar.type); //returns Bentley
+
+document.write("<br/><br/>");
+
+var thirdCar = {
+type:"Audi",
+model:"A3",
+color:"grey",
+weight:1520,
+constructorPlace: {
+    id:1,
+    country:"Germany"
+}};
+
+document.write(thirdCar.constructorPlace.country); // returns "Germany"
+</script>
+
+</body>
+</html>
